@@ -1,0 +1,50 @@
+// main: ../style.less
+
+.articals {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+}
+
+.articals_col {
+    width: 33.33333%;
+    padding: 0 1rem;
+}
+
+.articals__header {
+    position: relative;
+    margin-bottom: 1.35rem;
+}
+
+.articals_date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 77px;
+    height: 77px;
+    
+    background-color: @black;
+
+    color: @white;
+    font-style: 1.06rem;
+    line-height: 1.4rem;
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.articals__photo {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+
+.articals__title {
+    font-style: 1.2rem;
+    color: @black;
+    text-transform: uppercase;
+    font-weight: 700;
+}
