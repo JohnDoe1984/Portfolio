@@ -1,0 +1,135 @@
+*, html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+    font-family: sans-serif;
+
+    user-select: none;     /* User cant select any buttons */    
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url(forest.jpg);
+    object-fit:cover;
+
+    padding-top: 150px;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+    margin:0 auto;
+
+    background: #61a294;
+    border: 1px solid black;
+    border-radius: 5px;
+    max-width: 400px;
+
+    padding: 15px 7px;
+}
+
+.input {
+    grid-column: 1/-1;
+    padding: 0;
+}
+
+form {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid black;
+
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+    padding-right: 2px;
+
+    font-size: 26px;
+    color: #777;
+    outline: none;
+    text-align: right;
+    background-color: #e0f7fb;
+}
+
+.result {
+    height: 50px;
+    background-color: #e0f7fb;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-right: 2px;
+    border: 1px solid black;
+
+    font-size: 30px;
+    color: #21403f;
+    text-align: right;
+}
+
+.item {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.item:active {
+    opacity: 0.7;
+}
+
+.num {
+    background: linear-gradient(to bottom, #1ca099, #0e5855);
+}
+
+.clean {
+    background: linear-gradient(to bottom,#77b796, #0d5437);
+}
+
+.back {
+    background: linear-gradient(to bottom, #77b796, #0d5437);
+}
+
+.equal {
+    background: linear-gradient(to bottom, #d48d23, #775015);
+}
+
+.operators {
+    background: linear-gradient(to bottom, #1bafa7, #0f794d);
+}
+
+.function {
+    background: linear-gradient(to bottom, #3ca29d, #0a4242);
+}
+
+/*Resposive*/
+@media (max-width: 720px) {
+    .container {
+        max-width: 100%;
+        min-height: 100vh;
+
+        background-image: url(forest.jpg);
+        object-fit:cover;
+
+        background-size: 100%;
+        /*max-height: 90vh;*/
+    }
+
+    .wrapper {
+        padding-top: 0;
+    }
+}
