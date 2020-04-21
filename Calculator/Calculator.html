@@ -17,35 +17,35 @@
 
             <div class="input">
                 <form action="#" name="form">
-                    <input type="text" name="textView" onkeydown="return checkKey(event.key)" autofocus placeholder="0">
+                    <input type="text" name="textView" value="" id="input" maxlength="24"  autofocus placeholder="0">
                 </form>
-                <div class="result"></div>
+                <div class="result" id="result"></div>
             </div>
                   
-            <div class="item function" onclick="parents()">()</div>                           <!-- Can use <button> -->     
-            <div class="item function" onclick="insert('**0.5')">&radic;</div>
-            <div class="item clean" onclick="clean()">C</div>
-            <div class="item back" onclick="back()">&larr;</div>
-            <div class="item num" onclick="insert('7')">7</div>
-            <div class="item num" onclick="insert('8')">8</div>
-            <div class="item num" onclick="insert('9')">9</div>
-            <div class="item operators" onclick="insert('/')">&divide;</div>
-            <div class="item num" onclick="insert('4')">4</div>
-            <div class="item num" onclick="insert('5')">5</div>
-            <div class="item num" onclick="insert('6')">6</div>
-            <div class="item operators" onclick="insert('*')">&times;</div>
-            <div class="item num" onclick="insert('1')">1</div>
-            <div class="item num" onclick="insert('2')">2</div>
-            <div class="item num" onclick="insert('3')">3</div>
-            <div class="item operators" onclick="insert('-')">-</div>
-            <div class="item num" onclick="insert('.')">.</div>
-            <div class="item num" onclick="insert('0')">0</div>
-            <div class="item equal" onclick="equal('=')">=</div>
-            <div class="item operators" onclick="insert('+')">+</div>
+            <div class="item function" data-operation="percent" id="percent">%</div>                           <!-- Can use <button> -->     
+            <div class="item function" data-operation="radical" id="radical">&radic;</div>
+            <div class="item clean" data-operation="clean" id="clean">C</div>
+            <div class="item back" data-operation="back" id="back">&larr;</div>
+            <div class="item num" data-number="7" id="num-7">7</div>
+            <div class="item num" data-number="8" id="num-8">8</div>
+            <div class="item num" data-number="9" id="num-9">9</div>
+            <div class="item operators" data-operation="divide" id="divide">&divide;</div>
+            <div class="item num" data-number="4" id="num-4">4</div>
+            <div class="item num" data-number="5" id="num-5">5</div>
+            <div class="item num" data-number="6" id="num-6">6</div>
+            <div class="item operators" data-operation="multiply" id="multiply">&times;</div>
+            <div class="item num" data-number="1" id="num-1">1</div>
+            <div class="item num" data-number="2" id="num-2">2</div>
+            <div class="item num" data-number="3" id="num-3">3</div>
+            <div class="item operators" data-operation="subtract" id="subtract">-</div>
+            <div class="item num" data-number="." id="point">.</div>
+            <div class="item num" data-number="0" id="num-0">0</div>
+            <div class="item equal" data-operation="equal" id="equal">=</div>
+            <div class="item operators" data-operation="add" id="add">+</div>
 
         </div>
-
+        
     </div>
-    <script src="Main.js"></script>
+    <script src="calc.js"></script>
 </body>
 </html>
