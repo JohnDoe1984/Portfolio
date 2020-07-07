@@ -1,4 +1,4 @@
-(function(document) {
+(function (document) {
 
     var currentOperation = wrap(noop); // last selected operation
 
@@ -6,8 +6,8 @@
      * The function simply returns the argument that was passed to it
      * @param {Что угодно} operand 
      */
-    function noop(operandA, operandB) {
-        return operandB;
+    function noop(operandA, operand) {
+        return operand;
     }
 
     /**
@@ -16,9 +16,9 @@
      */
     function wrap(operation) {
         currentOperation && currentOperation.call && currentOperation();
-        var result = getResult();
-        return function() {
-            var input = Number.parseFloat(getInput() || 0);
+        let result = getResult();
+        return function () {
+            let input = Number.parseFloat(getInput() || 0);
             setResult(operation(result, input));
             setInput('');
         }
@@ -31,8 +31,8 @@
      * @param {Функция которая обрабатывает событие} listener 
      */
     function addListener(selector, event, listener) {
-        var el = document.querySelector(selector);
-        el.addEventListener(event, listener);                  
+        const el = document.querySelector(selector);
+        el.addEventListener(event, listener);
     }
 
     /**
@@ -70,7 +70,7 @@
      */
     function handleOperation(event) {
         var operation = event.target.dataset.operation;
-        switch(operation) {
+        switch (operation) {
             case 'add':
                 currentOperation = wrap(add);
                 break;
@@ -87,6 +87,7 @@
                 currentOperation = wrap(equal);
                 break;
             case 'clean':
+                currentOperation = wrap(noop);
                 clean();
                 break;
             case 'back':
@@ -97,11 +98,11 @@
                 break;
             case 'radical':
                 currentOperation = wrap(radical);
-                break;              
+                break;
             default:
                 currentOperation = wrap(equal);
-            }
         }
+    }
 
     function handleNumClick(event) {
         var num = getInput().toString();
@@ -112,11 +113,11 @@
     /**           INPUT - RESULT             **/
 
     function getInput() {
-        return (document.getElementById("input").value); 
+        return (document.getElementById("input").value);
     }
 
     function setInput(input) {
-        var element = document.getElementById('input');
+        let element = document.getElementById('input');
         element.value = input;
     }
 
@@ -125,7 +126,7 @@
     }
 
     function setResult(result) {
-        var element = document.getElementById('result');
+        let element = document.getElementById('result');
         element.innerText = result && result.toFixed ? result.toFixed(2) : result;
     }
 
@@ -152,23 +153,23 @@
     }
 
     function radical(operandA) {
-        return operandA **0.5;
+        return operandA ** 0.5;
     }
 
     function percent(operandA, operandB) {
-        return operandA / operandB * 100;
+        return operandA * 100 / operandB;
     }
 
     function clean() {
         setResult('');
         setInput('');
     }
-    
+
     function back() {
         var input = getInput();
         if (input) {
-            setInput(input.substring(0, input.length-1));
-        }   
+            setInput(input.substring(0, input.length - 1));
+        }
     }
 
     addEventListeners();
