@@ -1,3 +1,5 @@
+import './history.css';
+
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { Context } from '../context';
@@ -13,7 +15,7 @@ export function History() {
         </div>))
 
     return (
-        <div>
+        <div className="history">
             <div onClick={() => history.push('/')}><span>Add new</span></div>
             {list}
         </div>

@@ -1,3 +1,5 @@
+import './event.css';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context';
 import { useHistory, useLocation } from 'react-router-dom';

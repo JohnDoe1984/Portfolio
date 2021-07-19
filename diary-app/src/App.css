@@ -12,12 +12,6 @@
   justify-content: space-around;
 }
 
-.event {
-  width: 700px;
-  height: 300px;
-  font-size: 25px;
-}
-
 .date {
   text-align: center;
   justify-content: center;
@@ -27,15 +21,4 @@
 .buttonSave {
   width: 50px;
   height: 50px;
-}
-
-.history {
-  margin-top: 25px;
-  padding-top: 30px;
-  height: 100px;
-  border-top: 1px solid white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
 }
